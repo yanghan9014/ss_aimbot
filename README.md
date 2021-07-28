@@ -17,6 +17,13 @@ Since there's only a few egg colors to choose from, I took samples of each egg c
 After obtaining a mask for each egg color, I applied "opening" transformation with kernel size 3\*3 and 2 iterations, clearing up the false positive noises from the background. The mask for each egg colors are then unioned to get a mask for all enemy egg locations.
 The cropped out screenshot![test_3](https://user-images.githubusercontent.com/62785735/127311441-44276454-9eb4-4f17-ab9e-72b51bc47846.png) 
 Mask of all egg colors before mophological transformation![mask_0](https://user-images.githubusercontent.com/62785735/127311812-4cc917d7-a0f6-43fb-916b-0d523823af07.png) 
-Mask of all egg colors after mophological transformation![mask_0](https://user-images.githubusercontent.com/62785735/127311992-173ead01-b131-4231-889a-2f1f7666e01a.png) 
+Mask of all egg colors after mophological transformation![mask_0](https://user-images.githubusercontent.com/62785735/127315917-59d30c5e-525c-46f8-b62f-a43901fd1705.png)
+
 
 ## Hough circle detection
+We are now left with a mask of all egg colors with reduced background noises. By appling hough circle detection, we can pinpoint target coordinates, after which it will automatically move the mouse to the nearest target and press the actual fire key.
+
+It is more likely to get a hit if the crosshair is already close to the target, hence we select the closest target to the center of the screen.![original_0](https://user-images.githubusercontent.com/62785735/127316850-58e66103-2c10-4b2b-a8fb-ab754cc48aae.png)
+
+It is noted that the program still picked up some false positives due to the resembling color scheme, and the speed of the screenshot is limited by the processer speed, so the performance of this "aimbot" is still inferior to the average shell shocker player. On my laptop which has no graphics card, it takes an average of 0.2 seconds from triggering to firing, which is a huge delay in a first person shooter game.
+In the future I might employ yolo v4 to enhance the accuracy and use video streams as input to anticipate the error caused by the delay.
