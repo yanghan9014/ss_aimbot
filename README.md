@@ -10,7 +10,7 @@ For simplicity, a screenshot is taken only when the trigger key is pressed. It's
 
 ## Color filter
 Since there's only a few egg colors to choose from, I took samples of each egg colors, obtained their HSV values, and determined the margins of the HSV values that can be identified as each color 
-![sample8](https://user-images.githubusercontent.com/62785735/127164032-238e26f1-0e99-4cb5-b6c6-6419078fd984.png)
+![sample12](https://user-images.githubusercontent.com/62785735/127318474-a78dc028-c11e-4ad3-830a-9cd1c72f44c7.png)
 ![sample7](https://user-images.githubusercontent.com/62785735/127164060-5cc12c8d-5acb-4389-87a8-8ccd54ecf794.png) for this color, the HSV margin is somewhere around [10, 140, 60] and [20, 165, 250]
 
 ## Morphological transformation
