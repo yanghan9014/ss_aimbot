@@ -10,11 +10,13 @@ For simplicity, a screenshot is taken only when the trigger key is pressed. It's
 
 ## Color filter
 Since there's only a few egg colors to choose from, I took samples of each egg colors, obtained their HSV values, and determined the margins of the HSV values that can be identified as each color 
+
 ![sample12](https://user-images.githubusercontent.com/62785735/127318474-a78dc028-c11e-4ad3-830a-9cd1c72f44c7.png)
 ![sample7](https://user-images.githubusercontent.com/62785735/127164060-5cc12c8d-5acb-4389-87a8-8ccd54ecf794.png) for this color, the HSV margin is somewhere around [10, 140, 60] and [20, 165, 250]
 
 ## Morphological transformation
 After obtaining a mask for each egg color, I applied "opening" transformation with kernel size 3\*3 and 2 iterations, clearing up the false positive noises from the background. The mask for each egg colors are then unioned to get a mask for all enemy egg locations.
+
 The cropped out screenshot![test_3](https://user-images.githubusercontent.com/62785735/127311441-44276454-9eb4-4f17-ab9e-72b51bc47846.png) 
 Mask of all egg colors before mophological transformation![mask_0](https://user-images.githubusercontent.com/62785735/127311812-4cc917d7-a0f6-43fb-916b-0d523823af07.png) 
 Mask of all egg colors after mophological transformation![mask_0](https://user-images.githubusercontent.com/62785735/127315917-59d30c5e-525c-46f8-b62f-a43901fd1705.png)
@@ -25,5 +27,6 @@ We are now left with a mask of all egg colors with reduced background noises. By
 
 It is more likely to get a hit if the crosshair is already close to the target, hence we select the closest target to the center of the screen.![original_0](https://user-images.githubusercontent.com/62785735/127316850-58e66103-2c10-4b2b-a8fb-ab754cc48aae.png)
 
+## Limitations & future ideas
 It is noted that the program still picked up some false positives due to the resembling color scheme, and the speed of the screenshot is limited by the processer speed, so the performance of this "aimbot" is still inferior to the average shell shocker player. On my laptop which has no graphics card, it takes an average of 0.2 seconds from triggering to firing, which is a huge delay in a first person shooter game.
 In the future I might employ yolo v4 to enhance the accuracy and use video streams as input to anticipate the error caused by the delay.
