@@ -25,7 +25,7 @@ Mask of all egg colors after mophological transformation![mask_0](https://user-i
 ## Hough circle detection
 We are now left with a mask of all egg colors with reduced background noises. By appling hough circle detection, we can pinpoint target coordinates, after which it will automatically move the mouse to the nearest target and press the actual fire key.
 
-It is more likely to get a hit if the crosshair is already close to the target, hence we select the closest target to the center of the screen.![original_0](https://user-images.githubusercontent.com/62785735/127316850-58e66103-2c10-4b2b-a8fb-ab754cc48aae.png)
+It is more likely to get a hit if the crosshair is already close to the target, hence we select the closest target to the center of the screen. (bottom left egg marked in blue)![original_0](https://user-images.githubusercontent.com/62785735/127316850-58e66103-2c10-4b2b-a8fb-ab754cc48aae.png)
 
 ## Limitations & future ideas
 It is noted that the program still picked up some false positives due to the resembling color scheme, and the speed of the screenshot is limited by the processer speed, so the performance of this "aimbot" is still inferior to the average shell shocker player. On my laptop which has no graphics card, it takes an average of 0.2 seconds from triggering to firing, which is a huge delay in a first person shooter game.
